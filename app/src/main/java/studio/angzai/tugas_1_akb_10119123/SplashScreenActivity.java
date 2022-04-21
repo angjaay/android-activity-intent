@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 /*
-    Tanggal pengerjaan : 20 april 2022
+    Tanggal pengerjaan : 21 april 2022
     NIM : 10119123
     Nama : Angga Cahya Abadi
     Kelas : IF-3

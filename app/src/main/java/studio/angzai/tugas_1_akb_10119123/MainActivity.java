@@ -2,20 +2,42 @@ package studio.angzai.tugas_1_akb_10119123;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 /*
-    Tanggal pengerjaan : 20 april 2022
+    Tanggal pengerjaan : 21 april 2022
     NIM : 10119123
     Nama : Angga Cahya Abadi
     Kelas : IF-3
 */
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    Button profileBtn, logoutBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        profileBtn = (Button) findViewById(R.id.profile_btn);
+        logoutBtn = (Button)findViewById(R.id.logout_btn);
+        profileBtn.setOnClickListener(this);
+        logoutBtn.setOnClickListener(this);
+    }
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.profile_btn:
+                Intent intent = new Intent(MainActivity.this , ProfileActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.logout_btn:
+                Intent logout = new Intent(MainActivity.this , LoginActivity.class);
+                startActivity(logout);
+                finish();
+                break;
+
+        }
     }
 }
